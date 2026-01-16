@@ -86,3 +86,33 @@ def withdraw_money():
             break
     else:
         print("❌ Account not found!")
+#Menu
+# Menu-driven program
+def menu():
+    while True:
+        print("\n========== MINI BANKING SYSTEM ==========")
+        print("1. Create Account")
+        print("2. View Account")
+        print("3. Deposit Money")
+        print("4. Withdraw Money")
+        print("5. Exit")
+        print("========================================")
+
+        choice = input("Enter your choice (1-5): ")
+
+        if choice == '1':
+            create_account()
+        elif choice == '2':
+            view_account()
+        elif choice == '3':
+            deposit_money()
+        elif choice == '4':
+            withdraw_money()
+        elif choice == '5':
+            print("Thank you for using Mini Banking System!")
+            break
+        else:
+            print("❌ Invalid choice! Please select between 1 to 5.")
+
+# Start the program
+menu()
