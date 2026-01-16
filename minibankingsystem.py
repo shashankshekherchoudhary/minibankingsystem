@@ -59,4 +59,30 @@ def deposit_money():
     else:
         print("❌ Account not found!")
 
-    
+#Withdraw feature
+def withdraw_money():
+    acc_num = int(input("Enter account number : "))
+
+    for account in accounts:
+        if acc_num == account['acc_num']:
+            amount = int(input("Enter withdraw amount : "))
+
+            if amount > account['balance']:
+                print("----------------------------------")
+                print("      WITHDRAWAL FAILED")
+                print("----------------------------------")
+                print("Insufficient balance!")
+                print(f"Available Balance : ₹{account['balance']}")
+                print("----------------------------------")
+            else:
+                account['balance'] -= amount
+                print("----------------------------------")
+                print("    WITHDRAWAL SUCCESSFUL")
+                print("----------------------------------")
+                print(f"Account Number     : {account['acc_num']}")
+                print(f"Withdrawn Amount  : ₹{amount}")
+                print(f"Available Balance : ₹{account['balance']}")
+                print("----------------------------------")
+            break
+    else:
+        print("❌ Account not found!")
