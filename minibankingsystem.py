@@ -40,3 +40,23 @@ def view_account():
             break
     else:
         print("❌ Account not found!")
+
+#Deposit money
+def deposit_money():
+    acc_num = int(input("Enter account number : "))
+    for account in accounts:
+        if acc_num == account['acc_num']:
+            amount = int(input("Enter deposit ammount : "))
+            account['balance'] += amount
+            print("----------------------------------")
+            print("        DEPOSIT SUCCESSFUL")
+            print("----------------------------------")
+            print(f"Account Number    : {account['acc_num']}")
+            print(f"Deposited Amount : ₹{amount}")
+            print(f"Updated Balance  : ₹{account['balance']}")
+            print("----------------------------------")
+            break
+    else:
+        print("❌ Account not found!")
+
+    
