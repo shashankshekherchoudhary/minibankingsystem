@@ -2,7 +2,7 @@ from random import randint
 accounts = []
 def generate_account_number():
     while True:
-        acc_num = randint(100000, 999999)
+        acc_num = randint(1000, 9999)
         for account in accounts:
             if account["acc_num"] == acc_num:
                 break
@@ -24,5 +24,19 @@ def create_account():
                 }
     
     accounts.append(account)
-
-
+#View account
+def view_account():
+    acc_num = int(input("Enter account number to search : "))
+    for account in accounts:
+        if acc_num == account['acc_num']:
+            print("----------------------------------")
+            print("        ACCOUNT DETAILS")
+            print("----------------------------------")
+            print(f"Account Number    : {account['acc_num']}")
+            print(f"Account Holder    : {account['name']}")
+            print(f"Contact Number    : {account['contact_number']}")
+            print(f"Available Balance : ₹{account['balance']}")
+            print("----------------------------------")
+            break
+    else:
+        print("❌ Account not found!")
