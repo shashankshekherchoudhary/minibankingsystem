@@ -8,6 +8,7 @@ def generate_account_number():
                 break
         else:
             return acc_num
+        
 
 #Create account
 def create_account():
@@ -24,6 +25,15 @@ def create_account():
                 }
     
     accounts.append(account)
+        # Show account details after creation
+    print("----------------------------------")
+    print("   ACCOUNT CREATED SUCCESSFULLY")
+    print("----------------------------------")
+    print(f"Account Number    : {account['acc_num']}")
+    print(f"Account Holder    : {account['name']}")
+    print(f"Contact Number    : {account['contact_number']}")
+    print(f"Available Balance : ₹{account['balance']}")
+    print("----------------------------------")
 #View account
 def view_account():
     acc_num = int(input("Enter account number to search : "))
